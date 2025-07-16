@@ -1,1 +1,31 @@
-<p>services-component works!</p>
+<br>
+<h1>Tabla de servicios Derivados</h1>
+<br>
+<table [cellPadding]="12" [cellSpacing]="12" border="1">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Maestro</th>
+            <th>Puesto</th>
+            <th>Fecha Inicio</th>
+            <th>Fecha Final</th>
+            <th>Hora Inicio</th>
+            <th>Hora Final</th>
+            <th>Activo</th>
+            <th>Acciones</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let ServicioDerivado of listaServiciosDerivados">
+            <th>{{ServicioDerivado.id}}</th>
+            <th>{{ServicioDerivado.idmaestro}}</th>
+            <th>{{ServicioDerivado.puesto}}</th>
+            <th>{{ServicioDerivado.fechainicio}}</th>
+            <th>{{ServicioDerivado.fechafin}}</th>
+            <th>{{ServicioDerivado.horainicio}}</th>
+            <th>{{ServicioDerivado.horafin}}</th>
+            <th>{{ServicioDerivado.activo}}</th>
+            <th><button (click)="modificarRegistro(ServicioDerivado.id)">Modificar</button></th>
+        </tr>
+    </tbody>
+</table>

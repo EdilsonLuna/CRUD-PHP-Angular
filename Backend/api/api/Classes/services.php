@@ -64,18 +64,23 @@
 
         public function consultarService(string $idServicio) : array {
             try{
-                $query = "SELECT * FROM servicio WHERE idservicio = :idServicio";
+                //$query = "SELECT * FROM servicio WHERE idservicio = :idServicio";
+                $query = "SELECT idservicio AS id, codigomaestro_fk AS idmaestro, puesto, fechainicio ,fechafin, horainicio, horafin, activo FROM servicio";
                 $conn = DbConnection::crearConexion();
                 
                 #preparacion consulta
                 $consulta = $conn->prepare($query);
-                $consulta->bindParam(":idServicio",$idServicio);
+                //$consulta->bindParam(":idServicio",$idServicio);
 
                 #Consulta de datos
                 $consulta->execute();
                 $resultado = $consulta->fetchAll(PDO::FETCH_ASSOC);
-
-                return $resultado;
+                
+                $jsonRespuesta = array(
+                    "status" => 200,
+                    "listaResultado" => $resultado
+                );
+                return $jsonRespuesta;
             }catch(PDOException $e){
                 echo "Error consultando a base de datos: " . $e->getMessage();
                 return array();

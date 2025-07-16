@@ -2,18 +2,23 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { get } from 'http';
 import { Observable } from 'rxjs';
+import { consultaMaestro } from '../../Classes/SolicitudesHttp';
+import { ServicioDerivado } from '../../Classes/ServicioDerivado';
 
 @Injectable({
   providedIn: 'root'
 })
 export class MasterServiceService {
-
+  urlConsulta:string = "http://pruebaTecnicaEdilsonLuna.com/api";
   constructor(private httpClient: HttpClient) {
 
   }
 
-  consultaMaestros<T>(): Observable<T>{
-    let urlConsulta:string = "pruebaTecnicaEdilsonLuna.com/api/consultarMaestro";
-    return this.httpClient.get<T>(urlConsulta);
+  consultarMaestros():Observable<consultaMaestro>{
+    return this.httpClient.get<consultaMaestro>(this.urlConsulta + "/consultaMaestros");
+  }
+
+  consultarServiciosDerivados():Observable<consultaMaestro>{
+    return this.httpClient.get<consultaMaestro>(this.urlConsulta + "/consultaServiciosDerivados");
   }
 }

@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { MasterServiceService } from '../../services/MasterService/master-service.service';
+import { error } from 'console';
+import { Maestro } from '../../Classes/Maestro';
 
 @Component({
   selector: 'app-master-services-component',
@@ -9,16 +12,33 @@ import { CommonModule } from '@angular/common';
   styleUrl: './master-services-component.component.scss'
 })
 export class MasterServicesComponentComponent implements OnInit{
-  arraDatos : string[] = [];
+  
+  listaMaestros: Maestro[] = [];
+
+  constructor(private masterServiceService: MasterServiceService){
+
+  }
 
   ngOnInit(): void {
-    
+    this.consultarListaMaestros();
   }
 
-  agregarArray(){
-    this.arraDatos.push("as123","asd123123");
-    console.log(this.arraDatos);
+  consultarListaMaestros(){
+    this.masterServiceService.consultarMaestros().subscribe({
+      next : data =>{
+        console.log("Data recibida: ");
+        console.log(data);
+        this.listaMaestros = data.listaResultado;
+      },
+      error: error => {
+        console.log(error);
+      },
+      complete : () =>{
+        console.log("proceso completado");
+      }
+    })
   }
+  
 
 
 }

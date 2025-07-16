@@ -1,0 +1,17 @@
+table {
+  width: 70%;
+  border-collapse: collapse;
+  font-family: Arial, sans-serif;
+}
+th, td {
+  padding: 10px;
+  border: 1px solid #ccc;
+  text-align: left;
+}
+th {
+  background-color: #f4f4f4;
+}
+
+tr:hover {
+  background-color: #eef;
+}
