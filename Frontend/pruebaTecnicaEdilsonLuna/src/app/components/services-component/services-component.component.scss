@@ -15,3 +15,60 @@ th {
 tr:hover {
   background-color: #eef;
 }
+
+.mainContainer{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.btn{
+  border-radius: 10px;
+  padding: 5px;
+  margin: 5px;
+  border: 0px;
+  color: white;
+  height: 30px;
+}
+
+.btn:hover{
+  cursor: pointer;
+}
+
+.btn:disabled{
+  cursor: default;
+  opacity: 0.3;
+}
+
+.btn-Modificar{
+  background-color: rgb(105, 140, 253);
+}
+
+.btn-Modificar:enabled:hover{
+  background-color: rgb(56, 102, 255);
+}
+
+.btn-Desactivar{
+  background-color: rgb(253, 105, 105);
+}
+
+.btn-Desactivar:hover{
+  background-color: rgb(255, 45, 45);
+}
+
+.btn-Activar{
+  background-color: rgb(62, 161, 87);
+}
+
+.btn-Activar:hover{
+  background-color: rgb(36, 228, 84);
+}
+
+.containerTitle{
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}

@@ -26,15 +26,12 @@ export class MasterServicesComponentComponent implements OnInit{
   consultarListaMaestros(){
     this.masterServiceService.consultarMaestros().subscribe({
       next : data =>{
-        console.log("Data recibida: ");
-        console.log(data);
         this.listaMaestros = data.listaResultado;
       },
       error: error => {
         console.log(error);
       },
       complete : () =>{
-        console.log("proceso completado");
       }
     })
   }

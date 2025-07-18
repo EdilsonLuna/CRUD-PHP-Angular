@@ -1,27 +1,29 @@
-<br>
-<h1>Tabla de Maestros</h1>
-<br>
-<table class="tablaListadoMaestro" [cellPadding]="12" [cellSpacing]="12" border="1">
-    <thead>
-        <tr>
-            <th>Código</th>
-            <th>Descripción</th>
-            <th>Arma</th>
-            <th>Ciudad</th>
-            <th>Activo</th>
-            <th>FechaInicio</th>
-            <th>FechaFin</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr *ngFor="let maestro of listaMaestros">
-            <th>{{maestro.codigo}}</th>
-            <th>{{maestro.descripcion}}</th>
-            <th>{{maestro.arma}}</th>
-            <th>{{maestro.ciudad}}</th>
-            <th>{{maestro.activo}}</th>
-            <th>{{maestro.fechainicio}}</th>
-            <th>{{maestro.fechafin}}</th>
-        </tr>
-    </tbody>
-</table>
+<div class="mainContainer">
+    <br>
+    <h1>Tabla de Maestros</h1>
+    <br>
+    <table class="tablaListadoMaestro" [cellPadding]="12" [cellSpacing]="12" border="1">
+        <thead>
+            <tr>
+                <th>Código</th>
+                <th>Descripción</th>
+                <th>Arma</th>
+                <th>Ciudad</th>
+                <th>Activo</th>
+                <th>FechaInicio</th>
+                <th>FechaFin</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let maestro of listaMaestros">
+                <th>{{maestro.codigo}}</th>
+                <th>{{maestro.descripcion}}</th>
+                <th>{{maestro.arma}}</th>
+                <th>{{maestro.ciudad}}</th>
+                <th>{{maestro.activo}}</th>
+                <th>{{maestro.fechainicio}}</th>
+                <th>{{maestro.fechafin}}</th>
+            </tr>
+        </tbody>
+    </table>
+</div>

@@ -1,0 +1,38 @@
+<div class="mainContainer">
+    <button (click)="irPatnallaPrincipal()" class="btnVolver">Volver</button>
+    <div class="formContainer">
+        <form (submit)="enviarForm()" [formGroup]="formServicio" class="mainForm">
+            <div class="div1">
+                <label for="id">Servicio Derivado</label>
+                <input type="text" class="" formControlName="id" placeholder="ID Servicio Derivado" maxlength="9" [readOnly]="!flagNuevo">
+            </div>
+            <div class="div2">
+                <label for="maestro">Servicio Maestro</label>
+                <input type="text" class="div2" formControlName="maestro" placeholder="ID Maestro" maxlength="7" [readOnly]="!flagNuevo">
+            </div>
+            <div class="div3">
+                <label for="maestro">Puesto</label>
+                <input type="text" class="div3" formControlName="puesto" placeholder="Puesto">
+            </div>
+            <div class="div4">
+                <label for="maestro">Fecha Inicio</label>
+                <input type="date" class="div4" formControlName="fechaInicio">
+            </div>
+            <div class="div5">
+                <label for="maestro">Fecha Fin</label>
+                <input type="date" class="div5" formControlName="fechaFin">
+            </div>
+            <div class="div6">
+                <label for="maestro">Hora Inicio</label>
+                <input type="time" class="div6" formControlName="horaInicio">
+            </div>
+            <div class="div7">
+                <label for="maestro">Hora Fin</label>
+                <input type="time" class="div7" formControlName="horaFin">
+            </div>
+            <div class="div9">
+                <button type="submit" class="btnEnviar">Guardar</button>
+            </div>
+        </form>
+    </div>
+</div>
