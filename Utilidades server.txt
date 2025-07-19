@@ -1,0 +1,32 @@
+===
+.htaccess
+Options All -Indexes
+Options -MultiViews
+
+RewriteEngine On
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^ index.php [QSA,L]
+
+=====
+
+.phpvhosts
+XAMPP -> php -> conf -> extra vhosts
+
+<VirtualHost *:80>
+    DocumentRoot "C:/xampp/htdocs/API_PHP/api"
+    ServerName pruebaTecnicaEdilsonLuna.com
+</VirtualHost>
+
+======
+hosts system32
+127.0.0.1    nombreurl.com
+
+
+====
+php.ini -> XAMPP -> php -> php.ini
+Buscar 
+extension=pdo_pgsql
+extension=pgsql
+y quitarles el ; si lo tienen
